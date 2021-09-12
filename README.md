@@ -7,7 +7,7 @@ No dependency XML encoder using JSX to describe the XML tree for Deno.
 
 ### Simple
 
-```ts
+```tsx
 import React, { render } from "./mod.ts";
 
 console.log(render(<asd name={false}>asdf</asd>));
@@ -17,7 +17,7 @@ console.log(render(<asd name={false}>asdf</asd>));
 
 ### Component
 
-```ts
+```tsx
 import React, { render } from "./mod.ts";
 
 function Component({ name, nr }: { name: string; nr: number }) {
@@ -39,7 +39,7 @@ JSX only allows lowercase generic tag names.
 Upper case names are reserved for component functions.
 You can use XML namespaces and `replaceTag` to circumvent this.
 
-```ts
+```tsx
 import React, { render } from "./mod.ts";
 
 console.log(
