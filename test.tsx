@@ -47,3 +47,14 @@ Deno.test("transformTagName", () => {
     `<FOO>Hello</FOO>`,
   );
 });
+
+Deno.test("escaping", () => {
+  assertEquals(
+    render(
+      <asd a="asd&amp;&amp;asd;<>&amp;" b={"&<>;"}>
+        ;&amp; {'"&&<><;;"'} asdf
+      </asd>,
+    ),
+    `<asd a="asd&amp;&amp;asd;&lt;&gt;&amp;" b="&amp;&lt;&gt;;">;&amp; &quot;&amp;&amp;&lt;&gt;&lt;;;&quot; asdf</asd>`,
+  );
+});

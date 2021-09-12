@@ -39,7 +39,7 @@ export function render(
     typeof node === "string" || typeof node === "number" ||
     typeof node === "boolean"
   ) {
-    return node.toString();
+    return encodeXml(node.toString());
   }
 
   const tag = args?.replaceTag ? args.replaceTag(node.tag) : node.tag;
